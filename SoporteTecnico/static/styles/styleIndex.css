@@ -1,0 +1,35 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 1% 1% 1% 1%;
+    background-color: #D29022;
+    width: 90%;
+    height: 90%;
+}
+#bIni{
+    background-color: #2C036F;
+}
+#bReg{
+    background-color: #A40F0F;
+}
+.boton{
+    border-color: gray;
+    color: white;
+    border-radius: 10px;
+    font-size: 15px;
+}
+.ali{
+    display: inline-block;
+}
+.campos{
+    font-size: 25px;
+    border-radius: 10px;
+}
+.login{
+    display: flex;
+    flex-wrap: wrap-reverse;
+    border-radius: 10px;
+    background-color: azure;
+}
