@@ -20,9 +20,6 @@ body{
     border-radius: 10px;
     font-size: 15px;
 }
-.ali{
-    display: inline-block;
-}
 .campos{
     font-size: 25px;
     border-radius: 10px;
@@ -31,5 +28,11 @@ body{
     display: flex;
     flex-wrap: wrap-reverse;
     border-radius: 10px;
-    background-color: azure;
+    background-color: white;
+}
+.fLogin{
+    padding: 10px 10px 10px 10px;
+}
+#title{
+    display: block;
 }

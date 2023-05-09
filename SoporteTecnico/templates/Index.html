@@ -9,19 +9,23 @@
     <title>Login</title>
 </head>
 <body>
-    
+    <div id="vLogin">
+        <img src="{% static 'img/img1.png' %}" alt="">
+        <p>MESA DE AYUDA</p>
+        <p>Registrate o inicia sesion para poder solicitar soporte al area de IT</p>
+    </div>
     <div class="login">
-        <label>LOGIN</label>
-        <div>     
-        <form method="POST">
+        <form method="POST" class="fLogin">
             {% csrf_token %}
+            <h2 id="title">LOGIN</h2>
             <div>{{ form.user }}</div>
             <div>{{ form.password }}</div>
             <label>¿Olvido su contraseña?</label>
-            <div>{{ form.iniSesion }}</div>
-            <div>{{ form.registro}}</div>
+            <div>
+                {{ form.iniSesion }}
+                {{ form.registro}}
+            </div>
         </form>
-        </div> 
     </div>
 </body>
 </html>
