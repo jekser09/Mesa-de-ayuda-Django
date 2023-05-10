@@ -11,16 +11,16 @@
 <body>
     <div id="vLogin">
         <img src="{% static 'img/img1.png' %}" alt="">
-        <p>MESA DE AYUDA</p>
-        <p>Registrate o inicia sesion para poder solicitar soporte al area de IT</p>
+        <h1 id="lblTitle1">MESA DE AYUDA</h1>
+        <div id="textBien"><p>Registrate o inicia sesion para poder solicitar soporte al area de IT</p></div>
     </div>
     <div class="login">
         <form method="POST" class="fLogin">
             {% csrf_token %}
-            <h2 id="title">LOGIN</h2>
-            <div>{{ form.user }}</div>
-            <div>{{ form.password }}</div>
-            <label>¿Olvido su contraseña?</label>
+            <h1 id="lblTitle2">LOGIN</h1>
+            <div class="entry">{{ form.user }}</div>
+            <div class="entry">{{ form.password }}</div>
+            <a href="#" id="passw"><h2>¿Olvido su contraseña?</h2></a>
             <div>
                 {{ form.iniSesion }}
                 {{ form.registro}}

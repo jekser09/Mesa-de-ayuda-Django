@@ -1,38 +1,84 @@
 body{
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
-    min-height: 100vh;
+    min-height: 95vh;
     margin: 1% 1% 1% 1%;
     background-color: #D29022;
     width: 90%;
     height: 90%;
 }
+#vLogin{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#textBien{
+    font-size: 25px;
+    font-weight:bold;
+}
 #bIni{
     background-color: #2C036F;
+    margin-right: 50px;
+}
+#bIni:hover{
+    background-color: #561FB0;
+}
+#bIni:active{
+    background-color: #140330;
 }
 #bReg{
     background-color: #A40F0F;
 }
+#bReg:hover{
+    background-color: #CA3737;
+}
+#bReg:active{
+    background-color: #710909;
+}
+.entry{
+    margin: 15px 0px 12px 0px;
+}
 .boton{
-    border-color: gray;
+    border-style: hidden;
     color: white;
+    padding: 6px 30px 6px 30px;
     border-radius: 10px;
     font-size: 15px;
+    margin: auto;
+    font-size: 20px;
 }
+
 .campos{
-    font-size: 25px;
     border-radius: 10px;
+    border-color: #D2CCCC;
+    border-style: solid;
+    font-size: 25px;
+    
 }
 .login{
     display: flex;
-    flex-wrap: wrap-reverse;
     border-radius: 10px;
     background-color: white;
+    text-align: center;
 }
 .fLogin{
-    padding: 10px 10px 10px 10px;
+    display: inline;
+    text-justify: auto;
+    padding: 0px 15px 30px 15px;
 }
-#title{
+#lblTitle1{
+    color: white;
+}
+#lblTitle2{
     display: block;
+    color: #2C036F;
+    margin-bottom: 40px;
+}
+#passw:hover{
+    color: #1273D5;
+}
+#passw:active{
+    color: #DE2C2C;
 }

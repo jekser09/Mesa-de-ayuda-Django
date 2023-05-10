@@ -1,0 +1,10 @@
+body{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 95vh;
+    margin: 1% 1% 1% 1%;
+    background-color: #D29022;
+    width: 90%;
+    height: 90%;
+}
