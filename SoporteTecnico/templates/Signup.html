@@ -5,14 +5,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'styles/styleIndex.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'styles/styleSignup.css' %}" type="text/css">
     <title>Login</title>
 </head>
 <body>
     <div id="vLogin">
-        <img src="{% static 'img/img1.png' %}" alt="">
-        <h1 id="lblTitle1">MESA DE AYUDA</h1>
-        <div id="textBien"><p>Registrate o inicia sesion para poder solicitar soporte al area de IT</p></div>
+        <img src="{% static 'img/img1.png' %}" alt="" id="imglog">
+        <h1 id="lblTitle1">SOPORTE TECNICO</h1>
     </div>
     <div class="login">
         <form method="POST" class="fLogin">
@@ -20,12 +19,18 @@
             <h1 id="lblTitle2">LOGIN</h1>
             <div class="entry">{{ form.user }}</div>
             <div class="entry">{{ form.password }}</div>
-            <a href="#" id="passw"><h2>¿Olvido su contraseña?</h2></a>
+            <hr>
             <div>
                 {{ form.iniSesion }}
                 {{ form.registro}}
             </div>
         </form>
+        <div class="ppp">
+            <a href="#" id="pie"><h3>¿Olvido su contraseña?</h3></a>
+            <p>-||-</p>
+            <a href="#" id="pie"><h3>developers</h3></a>
+        </div>
+        
     </div>
 </body>
 </html>
