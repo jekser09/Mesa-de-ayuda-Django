@@ -2,11 +2,17 @@ body{
     display: flex;
     justify-content: space-around;
     align-items: center;
-    min-height: 95vh;
+    min-height: 100vh;
     margin: 1% 1% 1% 1%;
     background: linear-gradient(45deg,#FF4E50 10%,#F9D423 90%);
     width: 90%;
     height: 90%;
+}
+li{
+    text-decoration: none;
+}
+.messsages.success{
+    background-color: white;
 }
 #vLogin{
     display: flex;
@@ -16,12 +22,12 @@ body{
     align-items: center;
     word-wrap: break-word;
 }
-#lblTitle1{
-    color: rgba(255, 255, 255, 0.915);
-}
 #textBien{
     font-size: 25px;
     font-weight:bold;
+}
+#lblTitle1{
+    color: beige;
 }
 .boton{
     border-style: hidden;
@@ -29,7 +35,7 @@ body{
     padding: 6px 30px 6px 30px;
     border-radius: 30px;
     font-size: 15px;
-    margin: auto;
+    margin-top: 10px;
     font-size: 20px;
 }
 #bIni{
@@ -54,20 +60,18 @@ body{
 .entry{
     margin: 15px 0px 12px 0px;
 }
-
-
 .campos{
     border-radius: 45px;
     border-color: #D2CCCC;
     border-style: solid;
     font-size: 25px;
-    
 }
 .login{
     display: flex;
     text-align: center;
     flex-direction: column;
 }
+
 .fLogin{
     display: block;
     text-justify: auto;
@@ -78,21 +82,31 @@ body{
 #lblTitle2{
     display: block;
     color: #2C036F;
-    margin-bottom: 40px;
 }
-hr{
-    color: black;
-    height: 2px;
+.plogin{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-left: 20px;
+    margin-right: 20px;
 }
-.pie{
-    display: inline;
+.sep1{
+    border-style: outset;
+    background-color: rgb(214, 214, 214);
+    border-radius: 30px;
+    height: 4px;
 }
-#passw:hover{
-    color: #1273D5;
+.passw{
+    color: beige;
+    text-decoration: none;
 }
-#passw:active{
+.passw:hover{
+    color: blue;
+}
+.passw:active{
     color: #DE2C2C;
 }
+
 
 
 

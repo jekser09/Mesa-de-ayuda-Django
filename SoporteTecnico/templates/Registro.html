@@ -6,13 +6,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'styles/styleRegistro.css' %}" type="text/css">
-    <title>Document</title>
+    <title>Registro</title>
 </head>
 <body>
-    <form method="POST" class="fRegistro">
+    <form method="POST" class="fregistro">
         {% csrf_token %}
         <h1 id="title">Registro</h1>
-        {{form.as_p }}
+        {{form.nombres}}{{form.apellidos}}
+        {{form.documento}}{{form.tipodocumento}}
+        {{form.sede}}{{form.area}}
+        {{form.email}}{{form.usuario}}
+        {{form.passw1}}{{form.passw2}}
+        <button  type="button" class="boton" id="bVol" onclick="location.href='{% url 'signup' %}'">Volver</button>
+        {{form.registro}}
     </form>
 </body>
 </html>
