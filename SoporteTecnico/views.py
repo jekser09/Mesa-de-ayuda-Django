@@ -14,7 +14,7 @@ def index(request):
             if Usuario.objects.get(usuario=request.POST['user']) and Usuario.objects.get(contraseña=request.POST['password']):
                 return redirect('general')
         except Exception:
-            messages.success(request, 'Tu mensaje de éxito va aquí')
+            messages.success(request, 'No existe')
             return render(request,'Signup.html',{
             'form':Login()
             })
