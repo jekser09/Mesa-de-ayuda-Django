@@ -69,5 +69,7 @@ class Area(models.Model):
         return self.nombre
 
 class Solicitud(models.Model):
-    codigo=models.AutoField
-    idarea=models.ForeignKey(Area,blank=False,null=False)
+    codigo=models.AutoField(primary_key=True)
+    idarea=models.ForeignKey(Area,blank=False,null=False,on_delete=models.CASCADE)
+    descripcion=models.TextField(blank=False,null=False)
+    resuelto=models.BooleanField(default=False)

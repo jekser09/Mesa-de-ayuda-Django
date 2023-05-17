@@ -1,6 +1,6 @@
 from django.shortcuts import render,redirect,HttpResponse
 from django.contrib.auth import login,logout,authenticate
-from django.contrib.auth.forms import AuthenticationForm
+from django.contrib.auth.decorators import login_required
 from .forms import Registro,Login
 from .models import Usuario
 
@@ -45,5 +45,14 @@ def registro(request):
             'error':f'Ocurrio un error: {e}'
         })
 
+def signout(request):
+    logout(request)
+    return redirect('signin')
+
+@login_required
 def baseMenu(request):
-    return render(request,'layouts/baseMenu.html')
+    return render(request,'baseMenu.html',{'user':request.user})
+
+@login_required
+def soporte(request):
+    return render(request,'menuSoporte.html')

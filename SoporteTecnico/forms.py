@@ -1,5 +1,5 @@
 from django import forms
-from .models import Usuario
+from .models import Usuario,Area,Solicitud
 from django.contrib.auth.forms import AuthenticationForm
 
 
@@ -32,5 +32,8 @@ class Registro(forms.ModelForm):
             'email':forms.EmailInput(attrs={'class':'componentes','id':'ema','placeholder':'Correo Electronico'}),
             'username':forms.TextInput(attrs={'class':'componentes','id':'user','placeholder':'Digite un nombre de usuario'})
         }
-        
-        
+
+class Solicitud(forms.ModelForm):
+    nombreArea=Area.objects.all()
+    class Meta:
+        model=

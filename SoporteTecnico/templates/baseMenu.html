@@ -6,14 +6,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'styles/styleMenu.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'styles/styleSoporte.css' %}" type="text/css">
     <title>Index</title>
 </head>
 <body>
     <nav>
         <div class="datos">
             <img class="imguser" src="{% static 'img/user.png' %}" alt="" id="imgs">
-            <p class="inf">Usuario</p>
-            <p class="inf">Correo</p>
+            <p class="inf">{{ user.nombres }} {{ user.apellidos }}</p>
+            <p class="inf">{{ user.email }}</p>
             <button class="binfo" type="button">Editar perfil</button>
         </div>
         <ul class="opciones">
@@ -31,7 +32,7 @@
             <hr>
             <li class="items"><img class="imgop" src="{% static 'img/solicitudes.png' %}" alt="" id="imgs">Lista solicitudes</li>
             <hr>
-            <button class="blogout" type="button">Cerrar Sesion</button>
+            <button onclick="window.location.href = '/logout';" class="blogout" type="button">Cerrar Sesion</button>
         </ul>
         
     </nav>
