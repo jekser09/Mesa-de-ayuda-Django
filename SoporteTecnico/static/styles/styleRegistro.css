@@ -21,15 +21,16 @@ body{
 #title{
     color: #2C036F
 }
+#title{
+    grid-column: 1/ span 2;
+}
 .componentes{
     margin:2%;
     padding: 0% 6% 0% 6%;
     border-radius: 30px;
 }
-#title{
+#identificacion{
     grid-column: 1/ span 2;
-}
-#nom{
     grid-row: 2;
 }
 #bVol{

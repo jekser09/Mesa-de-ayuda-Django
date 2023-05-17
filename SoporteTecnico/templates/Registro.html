@@ -9,16 +9,12 @@
     <title>Registro</title>
 </head>
 <body>
+    {{error}}
     <form method="POST" class="fregistro">
         {% csrf_token %}
         <h1 id="title">Registro</h1>
-        {{form.nombres}}{{form.apellidos}}
-        {{form.documento}}{{form.tipodocumento}}
-        {{form.sede}}{{form.area}}
-        {{form.email}}{{form.usuario}}
-        {{form.passw1}}{{form.passw2}}
+        {{ form }}
         <button  type="button" class="boton" id="bVol" onclick="location.href='{% url 'signup' %}'">Volver</button>
-        {{form.registro}}
     </form>
 </body>
 </html>
