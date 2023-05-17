@@ -1,0 +1,83 @@
+body{
+    display: grid;
+    grid-template-columns: 30% 70%;
+    min-height: 97vh;
+    margin: 1% 1% 1% 1%;
+    background: linear-gradient(45deg,#FF4E50 10%,#F9D423 90%);
+    width: 90%;
+    height: 90%;
+}
+nav{
+    width: 100%;
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.915);
+}
+.datos{
+    display: grid;
+    grid-template-columns: 30% 70%;
+    grid-template-rows: 1fr 1fr 1fr;
+}
+.imguser{
+    grid-row: 1/ span 3;
+    margin: auto;
+}
+.binfo{
+    color: white;
+    border-style: none;
+    border-radius: 30px;
+    background-color: black;
+    margin: 1% 40% 6% 0%;
+}
+.binfo:hover{
+    background-color: rgb(57, 57, 57);
+}
+.binfo:active{
+    background-color: rgb(35, 29, 29);
+}
+.inf{
+    margin: 6% 0% 6% 0%;
+}
+hr{
+    border-style: inset;
+    margin-right: 5px;
+    color: gray;
+}
+.sep0{
+    border-style: none;
+}
+.opciones{
+    list-style-type: none;
+    margin-left: 0px;
+    margin-right: 0px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+.items{
+    display: inline;
+    border-radius: 10px;
+}
+.titlesep{
+    padding-left: 35%;
+    padding-right: 35%;
+    margin: auto;
+    
+}
+.imgop{
+    margin-right: 15%;
+}
+.blogout{
+    border-style: none;
+    border-radius: 25px;
+    margin-left:35%;
+    margin-right: 35%;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    color: white;
+    background-color: #8A0000;
+}
+.blogout:hover{
+    background-color: #CF0202 ;
+}
+.blogout:active{
+    background-color: #540000;
+}

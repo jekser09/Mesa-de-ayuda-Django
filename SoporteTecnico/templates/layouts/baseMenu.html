@@ -1,0 +1,43 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'styles/styleMenu.css' %}" type="text/css">
+    <title>Index</title>
+</head>
+<body>
+    <nav>
+        <div class="datos">
+            <img class="imguser" src="{% static 'img/user.png' %}" alt="" id="imgs">
+            <p class="inf">Usuario</p>
+            <p class="inf">Correo</p>
+            <button class="binfo" type="button">Editar perfil</button>
+        </div>
+        <ul class="opciones">
+            <li class="items" href="/#/"><img class="imgop" src="{% static 'img/inicio.png' %}" alt="" id="imgs">Inicio</li>            
+            <hr>
+            <li class="items" href="/#/"><img class="imgop" src="{% static 'img/soporte.png' %}" alt="" id="imgs">Soporte</li>
+            <hr>
+            <li class="items" href="/#/"><img class="imgop" src="{% static 'img/solicitud.png' %}" alt="" id="imgs">Mis solicitudes</li>
+            <hr>
+            <li class="items" href="/#/"><img class="imgop" src="{% static 'img/resuelto.png' %}" alt="" id="imgs">Solicitudes resueltas</li>
+            <hr>
+            <li class="items titlesep" href="/#/">Administracion</li>
+            <hr class="sep0">
+            <li class="items"><img class="imgop" src="{% static 'img/usuarios.png' %}" alt="" id="imgs">Gestion usuarios</li>
+            <hr>
+            <li class="items"><img class="imgop" src="{% static 'img/solicitudes.png' %}" alt="" id="imgs">Lista solicitudes</li>
+            <hr>
+            <button class="blogout" type="button">Cerrar Sesion</button>
+        </ul>
+        
+    </nav>
+    <div class="contenido">
+    {% block content %}
+    {% endblock %}
+    </div>
+</body>
+</html>
