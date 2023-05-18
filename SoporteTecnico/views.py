@@ -1,8 +1,8 @@
 from django.shortcuts import render,redirect,HttpResponse
 from django.contrib.auth import login,logout,authenticate
 from django.contrib.auth.decorators import login_required
-from .forms import Registro,Login
-from .models import Usuario
+from .forms import Registro,Login,FormSolicitud
+from .models import Usuario,Area
 
 # Create your views here.
 def signin(request):
@@ -55,4 +55,13 @@ def baseMenu(request):
 
 @login_required
 def soporte(request):
-    return render(request,'menuSoporte.html')
+    form=FormSolicitud
+    try:
+        if request.method=='GET':
+            return render(request,'menuSoporte.html',{'form':form})
+        elif request.method=='POST':
+            a=Area.objects.get(nombre=request.POST['areas'])
+            a.solicitud_set.create(descripcion=request.POST['descripcion'])
+            return render(request,'menuSoporte.html',{'form':form})
+    except:
+        return render(request,'menuSoporte.html',{'form':form,'error':'Error al guardar solicitud'})

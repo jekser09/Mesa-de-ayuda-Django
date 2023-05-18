@@ -33,7 +33,13 @@ class Registro(forms.ModelForm):
             'username':forms.TextInput(attrs={'class':'componentes','id':'user','placeholder':'Digite un nombre de usuario'})
         }
 
-class Solicitud(forms.ModelForm):
-    nombreArea=Area.objects.all()
+class FormSolicitud(forms.ModelForm):
+    aux=Area.objects.all()
+    aux=list(map(lambda obj: (obj.nombre,obj.nombre),aux))
+    areas=forms.ChoiceField(label=False,widget=forms.Select(attrs={'class':'sopitems areas'}),choices=aux)
+    enviar=forms.CharField(label=False,widget=forms.TextInput(attrs={'class':'boton','id':'breg','type':'submit','value':'Enviar','class':'boton','id':'bReg'}))
     class Meta:
-        model=
+        model=Solicitud
+        fields=('descripcion','observacion')
+        widgets={'descripcion':forms.Textarea(attrs={'class':'sopitems desc'}),
+                 'observacion':forms.Textarea(attrs={'class':'sopitems obs'})}

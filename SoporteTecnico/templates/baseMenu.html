@@ -26,19 +26,19 @@
             <hr>
             <li class="items" href="/#/"><img class="imgop" src="{% static 'img/resuelto.png' %}" alt="" id="imgs">Solicitudes resueltas</li>
             <hr>
+            {% if user.usuario_admin %}
             <li class="items titlesep" href="/#/">Administracion</li>
             <hr class="sep0">
             <li class="items"><img class="imgop" src="{% static 'img/usuarios.png' %}" alt="" id="imgs">Gestion usuarios</li>
             <hr>
             <li class="items"><img class="imgop" src="{% static 'img/solicitudes.png' %}" alt="" id="imgs">Lista solicitudes</li>
             <hr>
+            {% endif %}
             <button onclick="window.location.href = '/logout';" class="blogout" type="button">Cerrar Sesion</button>
         </ul>
         
     </nav>
-    <div class="contenido">
     {% block content %}
     {% endblock %}
-    </div>
 </body>
 </html>

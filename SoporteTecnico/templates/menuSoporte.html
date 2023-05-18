@@ -1,4 +1,17 @@
 {% extends 'baseMenu.html' %}
 {% block content %}
-<h1>prueba<h2>
+<div class="contenido">
+    <form method="POST" class="fsoporte">
+        {% csrf_token %}
+        <h1 class="sopitems">Solicitud de soporte</h1>
+        {{error}}
+        <label>Lugar del insidente</label>
+        {{form.areas}}
+        <hr class="sep">
+        <label>Descripcion del insidente</label>
+        {{form.descripcion}}
+        <hr class="sep">
+        {{form.enviar}}
+    </form>
+</div>
 {% endblock %}
