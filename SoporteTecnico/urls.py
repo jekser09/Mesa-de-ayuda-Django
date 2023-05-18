@@ -6,5 +6,6 @@ urlpatterns=[
     path('registro/',views.registro,name='registro'),
     path('index/',views.baseMenu,name="baseMenu"),
     path('logout/',views.signout,name='signout'),
-    path('soporte/',views.soporte,name='soporte')
+    path('soporte/',views.soporte,name='soporte'),
+    path('solicitudes/',views.solicitudes,name='solicitudes')
 ]

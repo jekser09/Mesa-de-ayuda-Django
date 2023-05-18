@@ -2,7 +2,7 @@ from django.shortcuts import render,redirect,HttpResponse
 from django.contrib.auth import login,logout,authenticate
 from django.contrib.auth.decorators import login_required
 from .forms import Registro,Login,FormSolicitud
-from .models import Usuario,Area
+from .models import Usuario,Area,Solicitud
 
 # Create your views here.
 def signin(request):
@@ -61,7 +61,24 @@ def soporte(request):
             return render(request,'menuSoporte.html',{'form':form})
         elif request.method=='POST':
             a=Area.objects.get(nombre=request.POST['areas'])
-            a.solicitud_set.create(descripcion=request.POST['descripcion'])
+            Solicitud(idarea=a,nombrearea=a.nombre,
+                      idpersona=request.user,nombrepersona=request.user.nombres,
+                      descripcion=request.POST['descripcion']).save()
             return render(request,'menuSoporte.html',{'form':form})
-    except:
-        return render(request,'menuSoporte.html',{'form':form,'error':'Error al guardar solicitud'})
+    except Exception as e:
+        return render(request,'menuSoporte.html',{'form':form,'error':f'Error al guardar solicitud ({e})'})
+
+@login_required
+def solicitudes(request):
+    def aux(soli:Solicitud):
+        return FormSolicitud(initial={
+                                    'descripcion':soli.descripcion,
+                                    'observacion':soli.observacion,
+                                    'idarea':soli.idarea,
+                                    'nombrearea':soli.nombrearea,
+                                    'idpersona':soli.idpersona,
+                                    'nombrepersona':soli.nombrepersona,
+                                    'resuelto':soli.resuelto
+                                    })
+    formularios=list(map(aux,Solicitud.objects.all()))
+    return render(request,'solicitudes.html',{'forms':formularios})

@@ -71,7 +71,9 @@ class Area(models.Model):
 class Solicitud(models.Model):
     codigo=models.AutoField(primary_key=True)
     idarea=models.ForeignKey(Area,blank=False,null=False,on_delete=models.CASCADE)
+    nombrearea=models.CharField(max_length=100,blank=True,null=False,default='')
     idpersona=models.ForeignKey(Usuario,blank=False,on_delete=models.PROTECT)
+    nombrepersona=models.CharField(max_length=100,blank=True,null=False,default='')
     descripcion=models.TextField(blank=False,null=False)
     observacion=models.TextField(default='',blank=True,null=False)
     resuelto=models.BooleanField(default=False)

@@ -1,0 +1,32 @@
+{% extends 'baseMenu.html' %}
+{% block content %}
+<div class="contenido">
+    <table>
+        <thead>
+            <tr>
+                <th>Area</th>
+                <th>Usuario</th>
+                <th>Descripcion</th>
+                <th>Observacion</th>
+                <th>Resuelto</th>
+                <th>|-------|</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for form in forms %}
+        <form method="POST" class="">
+            {% csrf_token %}    
+            <tr>
+                <td>{{form.nombrearea.value}}</td>
+                <td>{{form.nombrepersona.value}}</td>
+                <td>{{form.descripcion.value}}</td>
+                <td>{{form.observacion}}</td>
+                <td>{{form.resuelto}}</td>
+                <td>{{form.enviar}}</td>
+            </tr>
+        </form>
+        {% endfor %}
+        </tbody>        
+    </table>
+</div>
+{% endblock %}
