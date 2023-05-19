@@ -7,8 +7,6 @@ class Login(AuthenticationForm):
     username=forms.CharField(label=False,widget=forms.TextInput(attrs={'placeholder':'Usuario','class':'campos'}),max_length=20)
     password=forms.CharField(label=False,widget=forms.PasswordInput(attrs={'placeholder':'Contraseña','class':'campos'}),max_length=20)
     iniSesion=forms.CharField(widget=forms.TextInput(attrs={'type':'submit','value':'Ingreso','class':'boton','id':'bIni'}))
-    
-
 
 class Registro(forms.ModelForm):
     passw1=forms.CharField(label=False,widget=forms.PasswordInput(attrs={'class':'componentes','id':'pass1','placeholder':'Digite una contraseña'}))
@@ -41,11 +39,12 @@ class FormSolicitud(forms.ModelForm):
     enviar=forms.CharField(label=False,widget=forms.TextInput(attrs={'class':'boton','id':'breg','type':'submit','value':'Enviar','class':'boton','id':'bReg'}))
     class Meta:
         model=Solicitud
-        fields=('descripcion','observacion','idarea','nombrearea','idpersona','nombrepersona','resuelto')
+        fields=('codigo','descripcion','observacion','idarea','nombrearea','idpersona','nombrepersona','resuelto')
+        #exclude=('codigo',)
         widgets={'descripcion':forms.Textarea(attrs={'class':'sopitems desc'}),
                  'observacion':forms.Textarea(attrs={'class':'sopitems obs'}),
                  'idarea':forms.NumberInput(attrs={}),
                  'nombrearea':forms.TextInput(attrs={}),
                  'idpersona':forms.NumberInput(attrs={}),
                  'nombrepersona':forms.TextInput(attrs={}),
-                 'resuelto':forms.CheckboxInput(attrs={}),}
+                 'resuelto':forms.CheckboxInput(attrs={})}

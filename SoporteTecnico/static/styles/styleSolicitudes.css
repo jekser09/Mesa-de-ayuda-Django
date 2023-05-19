@@ -1,0 +1,27 @@
+.diseñotabla{
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    width: 100%;
+    margin-left: 50px;
+    margin-right: 0px;
+    border-radius: 25px;
+    background-color: rgba(255, 255, 255, 0.915);
+}
+.solitabla{
+    border-bottom: 1px;
+    border-left: 1px;
+    border-right: 1px;
+    border-radius: 25px;
+    width: 100%;
+}
+.celdas{
+    word-wrap: break-word;
+    border-style:ridge;
+    border-color: black;
+    border-left: 1px;
+    border-right: 1px;
+    border-radius: 25px;
+    background-color: #E2E2E2;
+}
+

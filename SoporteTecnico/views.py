@@ -1,4 +1,4 @@
-from django.shortcuts import render,redirect,HttpResponse
+from django.shortcuts import render,redirect,get_object_or_404
 from django.contrib.auth import login,logout,authenticate
 from django.contrib.auth.decorators import login_required
 from .forms import Registro,Login,FormSolicitud
@@ -71,14 +71,9 @@ def soporte(request):
 @login_required
 def solicitudes(request):
     def aux(soli:Solicitud):
-        return FormSolicitud(initial={
-                                    'descripcion':soli.descripcion,
-                                    'observacion':soli.observacion,
-                                    'idarea':soli.idarea,
-                                    'nombrearea':soli.nombrearea,
-                                    'idpersona':soli.idpersona,
-                                    'nombrepersona':soli.nombrepersona,
-                                    'resuelto':soli.resuelto
-                                    })
+            return FormSolicitud(instance=soli)
     formularios=list(map(aux,Solicitud.objects.all()))
-    return render(request,'solicitudes.html',{'forms':formularios})
+    if request.method=='GET':return render(request,'solicitudes.html',{'forms':formularios})
+    elif request.method=='POST':
+        print(request.POST)
+        return redirect("solicitudes")

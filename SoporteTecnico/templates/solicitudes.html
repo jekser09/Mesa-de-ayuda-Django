@@ -1,28 +1,29 @@
 {% extends 'baseMenu.html' %}
 {% block content %}
-<div class="contenido">
-    <table>
+<div class="diseñotabla">
+    <table class="solitabla">
         <thead>
             <tr>
-                <th>Area</th>
-                <th>Usuario</th>
-                <th>Descripcion</th>
-                <th>Observacion</th>
-                <th>Resuelto</th>
-                <th>|-------|</th>
+                <th class="celdas">Area</th>
+                <th class="celdas">Usuario</th>
+                <th class="celdas">Descripcion</th>
+                <th class="celdas">Observacion</th>
+                <th class="celdas">Resuelto</th>
+                <th class="celdas"></th>
             </tr>
         </thead>
         <tbody>
         {% for form in forms %}
-        <form method="POST" class="">
-            {% csrf_token %}    
+        <form method="POST" class="fsolicitud">
+            {% csrf_token %}
+            {{form.codigo}}
             <tr>
-                <td>{{form.nombrearea.value}}</td>
-                <td>{{form.nombrepersona.value}}</td>
-                <td>{{form.descripcion.value}}</td>
-                <td>{{form.observacion}}</td>
-                <td>{{form.resuelto}}</td>
-                <td>{{form.enviar}}</td>
+                <td class="celdas">{{form.nombrearea.value}}</td>
+                <td class="celdas">{{form.nombrepersona.value}}</td>
+                <td class="celdas">{{form.descripcion.value}}</td>
+                <td class="celdas">{{form.observacion}}</td>
+                <td class="celdas">{{form.resuelto}}</td>
+                <td class="celdas">{{form.enviar}}</td>
             </tr>
         </form>
         {% endfor %}
